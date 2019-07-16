@@ -144,7 +144,6 @@ main()
 	// Update loop
 	while(True) 
 	{
-
 		char *datetime = getTime();
 		int batterypercent = getBattery();
 		int freemem = getFreeMemInMegabyte();
