@@ -18,7 +18,6 @@ static char* readFile(FILE *file, const int beginning, const int end);
 static int findChar(FILE *file, const int offset, const char character);
 static int getFreeMemInKilobyte();
 static int getFreeMemInMegabyte();
-static int getCpuUsage();
 
 static void
 setStatus(char *str)
@@ -137,20 +136,10 @@ getFreeMemInMegabyte()
 	return getFreeMemInKilobyte() / 1024;
 }
 
-static int getCpuUsage()
-{
-	FILE *statfile = fopen("/proc/stat", "r");
-
-	
-	fclose(statfile);
-
-}
-
 int
 main()
 {
 	display = XOpenDisplay(NULL);
-	//printf("now: %d-%d-%d %d:%d:%d\n", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec);
 	
 	// Update loop
 	while(True) 
